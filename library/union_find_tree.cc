@@ -1,12 +1,9 @@
 // UnionFindTree requirements
-
 #define REP(i, n) for (int i = 0; i < n; ++i)
-#include <iostream>
 #include <vector>
 using namespace std;
 
 // UnionFindTree begin
-
 class UnionFindTree {
  public:
   UnionFindTree() : size_(0), parent_(), rank_() {}
@@ -42,16 +39,17 @@ class UnionFindTree {
   int size_;
   vector<int> parent_, rank_;
 };
-
 // UnionFindTree end
 
+// UnionFindTree testcode
+#include <iostream>
 int main() {
   UnionFindTree u(10);
   u.Unite(2, 3);
   u.Unite(2, 6);
   u.Unite(7, 9);
   REP(i, 10) {
-    cout << i << " " << u.Find(i) << endl;
+    std::cout << i << " " << u.Find(i) << std::endl;
   }
   return 0;
 }
