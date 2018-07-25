@@ -28,7 +28,11 @@ int ans = 0;
 signed main() {
   cin >> N;
 
-
+  1 5283679 4
+  12 583679 5
+  123 58679 7
+  1235 8679 7
+  12356 879 8
 
   cout << ans << endl;
   return 0;
