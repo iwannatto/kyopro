@@ -6,6 +6,9 @@ using namespace std;
 // UnionFindTree begin
 class UnionFindTree {
  public:
+  int size_;
+  vector<int> parent_, rank_;
+
   UnionFindTree() : size_(0), parent_(), rank_() {}
   UnionFindTree(int size) : size_(size), parent_(size), rank_(size, 0) {
     REP(i, size) { parent_[i] = i; }
@@ -35,9 +38,6 @@ class UnionFindTree {
   }
   bool Same(int x, int y) { return (Find(x) == Find(y)); }
 
- private:
-  int size_;
-  vector<int> parent_, rank_;
 };
 // UnionFindTree end
 
