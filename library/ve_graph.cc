@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+
 // union_find_tree.cc
 
 // VeGraph begin
