@@ -23,13 +23,13 @@ typedef pair<int, int> Pair;
 
 // const int kMaxN;
 
-int N;
+int A, B;
 int ans = 0;
 
 signed main() {
-  cin >> N;
+  cin >> A >> B;
 
-
+  ans = (A-1)*(B-1);
 
   cout << ans << endl;
   return 0;

@@ -23,13 +23,24 @@ typedef pair<int, int> Pair;
 
 // const int kMaxN;
 
-int N;
-int ans = 0;
+string S;
+int K;
+char ans;
 
 signed main() {
-  cin >> N;
+  cin >> S;
+  cin >> K;
 
-
+  REP(i, S.length()) {
+    if (S[i] != '1') {
+      ans = S[i];
+      break;
+    }
+    if (i+1 == K) {
+      ans = S[i];
+      break;
+    }
+  }
 
   cout << ans << endl;
   return 0;

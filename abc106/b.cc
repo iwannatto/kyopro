@@ -29,7 +29,15 @@ int ans = 0;
 signed main() {
   cin >> N;
 
-
+  REP(i, N) {
+    if ((i+1)%2 == 1) {
+      int y = 0;
+      REP(j, i+1) {
+        if ((i+1)%(j+1) == 0) { ++y; }
+      }
+      if (y == 8) { ++ans; }
+    }
+  }
 
   cout << ans << endl;
   return 0;
