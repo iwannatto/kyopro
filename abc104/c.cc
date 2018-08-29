@@ -18,7 +18,6 @@ using namespace std;
 #define FOR(i, a, b) for (int i = (a); i <= (b); ++i)
 #define RFOR(i, a, b) for (int i = (a); i >= (b); --i)
 #define REP(i, n) for (int i = 0; i < (n); ++i)
-#define NINTH_POWER_OF_TEN 1000000000
 #define int long long
 
 typedef long long ll;
