@@ -24,6 +24,38 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> Pair;
 
+// Bit begin
+
+class Bit {
+ public:
+  vector<int> bit;
+
+  Bit(int n) : bit(n+1) {}
+
+  int Sum(int i) {
+    ++i;
+    int s = 0;
+    while (i > 0) {
+      s += bit[i];
+      int last_bit = i & (-i);
+      i -= last_bit;
+    }
+    return s;
+  }
+
+  void Add(int i, int x) {
+    ++i;
+    while (i <= bit.size()) {
+      bit[i] += x;
+      int last_bit = i & (-i);
+      i += last_bit;
+    }
+    return;
+  }
+};
+
+// Bit end
+
 const int kMaxN = 100000;
 
 int N;
@@ -34,54 +66,39 @@ signed main() {
   cin >> N;
   REP(i, N) { cin >> A[i]; }
 
-  vector<int> v;
-  REP(i, N) {
-    v.push_back(A[i]);
+  int lb = 1, ub = NINTH_POWER_OF_TEN+1;
+  while (ub > lb+1) {
+    // cout << lb << " " << ub << endl;
+    int x = (ub+lb)/2;
 
-    unordered_map<int, int> le, lo, re, ro;
-    int s = 0;
-    RFOR(j, i-1, 0) {
-      if (A[j] <= A[i]) {
-        --s;
+    int a[N];
+    REP(i, N) {
+      if (A[i] < x) {
+        a[i] = -1;
       } else {
-        ++s;
-      }
-      if ((i-j)%2 == 0) {
-        ++le[s];
-      } else {
-        ++lo[s];
-      }
-    }
-    FOR(j, i+1, N-1) {
-      if (A[i] <= A[j]) {
-        ++s;
-      } else {
-        --s;
-      }
-      if ((j-i)%2 == 0) {
-        ++re[s];
-      } else {
-        ++ro[s];
+        a[i] = 1;
       }
     }
 
-    for (auto it = lo.begin(); it != lo.end(); ++it) {
-      int x = it->first;
-      int n = it->second;
-      if (x > 0) {
-        REP(k, n*ro[-x]) { v.push_back(A[i]); }
-        REP(k, n*re[-(x+1)]) { v.push_back(A[i]); }
-      } else {
-        REP(k, n*ro[-x]) { v.push_back(A[i]); }
-        REP(k, n*re[-x-1]) { v.push_back(A[i]); }
-      }
+    int S[N+1];
+    S[0] = 0;
+    REP(i, N) { S[i+1] = S[i] + a[i]; }
+    REP(i, N+1) { S[i] += N; }
+
+    int sum = 0;
+    Bit b(2*N+1);
+    FOR(r, 0, N) {
+      sum += b.Sum(S[r]);
+      b.Add(S[r], 1);
     }
-    for (auto it = le.begin(); it != le.end(); ++it) {
-      int x = it->first;
-      int n = it->second;
-      
+
+    if (sum >= (N*(N+1)/2 + 1) / 2) {
+      lb = x;
+    } else {
+      ub = x;
     }
   }
+  ans = lb;
 
   cout << ans << endl;
   return 0;
