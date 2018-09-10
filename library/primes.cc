@@ -6,7 +6,6 @@ using namespace std;
 
 
 // Primes begin
-
 class Primes {
  public:
   int n;
@@ -24,7 +23,6 @@ class Primes {
     }
   }
 };
-
 // Primes end
 
 // Primes testcode
