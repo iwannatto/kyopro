@@ -17,3 +17,14 @@ arc :
 	cp template/t.cc arc/f.cc
 	# cp template/Makefile arc/
 	cp template/memo.txt arc/
+
+agc :
+	mkdir agc
+	cp template/t.cc agc/a.cc
+	cp template/t.cc agc/b.cc
+	cp template/t.cc agc/c.cc
+	cp template/t.cc agc/d.cc
+	cp template/t.cc agc/e.cc
+	cp template/t.cc agc/f.cc
+	# cp template/Makefile agc/
+	cp template/memo.txt agc/
