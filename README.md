@@ -1,8 +1,9 @@
 # atcoder
 コンテストごとにディレクトリ  
-ディレクトリ名はコンテストページ開いた時のurlと同じ名前  
+ディレクトリ名はコンテストページ開いた時のurlと同じ名前、agc028みたいな  
 問題ごとにプログラムファイル  
-ファイル名はagc028_aならa.ccみたいに_のうしろ  
+ファイル名は問題ページのurlに準拠、agc028_aならa.ccみたいに_のうしろ  
+コミットメッセージは問題ページのurlに準拠、agc028_aみたいな
 
 atcoder problems  
 https://kenkoooo.com/atcoder/?user=iwannatto&rivals=&kind=category  
@@ -12,7 +13,8 @@ memo.txt
 （コンテスト中は自由な空間）  
 一番上にコンテストリンク・解説リンクを貼る
 ACした問題には問題リンクとタイトルと解説を入れる  
-反省は残しておくなら下に分離
+反省は残しておくなら下に分離  
+改行をいちいち入れるのが面倒なのと基本いっぱい続けて書くことより、.mdではなく.txtを採用
 
 取り組む問題のレベルに関しては  
 https://twitter.com/chokudai/status/986561875344158720  
@@ -24,7 +26,7 @@ https://kenkoooo.com/atcoder/?user=iwannatto&rivals=&kind=list
 
 AC済みの既出問題に解説を入れたい  
 problemsの上からやっていくことにする  
-今の進捗：...まで終了  
+今の進捗：agc028まで終了  
 
 libraryディレクトリが埋もれているのでrename  
 
