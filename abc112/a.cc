@@ -30,13 +30,19 @@ typedef pair<int, int> Pair;
 // const int kMaxN;
 
 int N;
-int ans = 0;
+// int ans = 0;
 
 signed main() {
   cin >> N;
+  if (N == 1) {
+    cout << "Hello World" << endl;
+  } else {
+    int A, B;
+    cin >> A;
+    cin >> B;
+    cout << A+B << endl;
+  }
 
 
-
-  cout << ans << endl;
   return 0;
 }

@@ -27,15 +27,27 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> Pair;
 
-// const int kMaxN;
+const int kMaxN = 50;
+const int kMaxK = NINTH_POWER_OF_TEN;
+const int kM = NINTH_POWER_OF_TEN+7;
 
-int N;
+int N, K;
+int A[kMaxN];
 int ans = 0;
 
+int dp[kMaxN][kMaxK];
+
 signed main() {
-  cin >> N;
+  cin >> N >> K;
+  REP(i, N) { cin >> A[i]; }
 
+  REP(i, N) {
+    int c = 0;
+    while (A[i] != 0) { A[i] /= 2; ++c; }
+    A[i] = c;
+  }
 
+  
 
   cout << ans << endl;
   return 0;

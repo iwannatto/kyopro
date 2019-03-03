@@ -27,15 +27,28 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> Pair;
 
-// const int kMaxN;
+const int kMaxN = 100;
+const int kMaxM = 100;
 
-int N;
-int ans = 0;
+int N, M, X, Y;
+string ans;
+
+int x[kMaxN], y[kMaxM];
 
 signed main() {
-  cin >> N;
+  cin >> N >> M >> X >> Y;
+  REP(i, N) { cin >> x[i]; }
+  REP(i, M) { cin >> y[i]; }
 
-
+  sort(x, x+N);
+  sort(y, y+M);
+  ans = "War";
+  FOR(i, X+1, Y) {
+    if (x[N-1] < i && i <= y[0]) {
+      ans = "No War";
+      break;
+    }
+  }
 
   cout << ans << endl;
   return 0;

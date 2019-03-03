@@ -27,15 +27,23 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> Pair;
 
-// const int kMaxN;
+const int kMaxR = 40;
 
-int N;
+int r, c;
+string C[kMaxR];
 int ans = 0;
 
+unordered_map<string, int> dp[kMaxR];
+
 signed main() {
-  cin >> N;
+  cin >> r >> c;
+  REP(i, r) { cin >> C[i]; }
 
-
+  REP(i, r) {
+    REP(j, c) {
+      
+    }
+  }
 
   cout << ans << endl;
   return 0;

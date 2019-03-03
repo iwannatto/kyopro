@@ -27,15 +27,38 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> Pair;
 
-// const int kMaxN;
+const int kMaxNM = 100000;
 
-int N;
+int N, M;
+string S, T;
 int ans = 0;
 
+int g, l, sn, tn;
+
+int Gcd(int a, int b) {
+  if (b == 0) { return a; }
+  return Gcd(b, a%b);
+}
+
+int Ans() {
+  REP(i, g) {
+    if (S[sn*i] != T[tn*i]) { return -1; }
+  }
+  return l;
+}
+
 signed main() {
-  cin >> N;
+  cin >> N >> M;
+  cin >> S;
+  cin >> T;
 
+  g = Gcd(N, M);
+  l = (N/g) * (M/g) * g;
 
+  sn = N/g;
+  tn = M/g;
+
+  ans = Ans();
 
   cout << ans << endl;
   return 0;

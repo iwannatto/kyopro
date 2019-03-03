@@ -1,13 +1,15 @@
 # コマンドラインからコンテストnumを与えられるようになりたい
 
+N =
+
 abc :
-	mkdir abc
-	cp template/t.cc abc/a.cc
-	cp template/t.cc abc/b.cc
-	cp template/t.cc abc/c.cc
-	cp template/t.cc abc/d.cc
-	# cp template/Makefile abc/
-	cp template/memo.txt abc/
+	mkdir abc${N}
+	cp template/t.cc abc${N}/a.cc
+	cp template/t.cc abc${N}/b.cc
+	cp template/t.cc abc${N}/c.cc
+	cp template/t.cc abc${N}/d.cc
+	# cp template/Makefile abc${N}/
+	cp template/memo.txt abc${N}/
 
 arc :
 	mkdir arc

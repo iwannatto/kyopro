@@ -29,13 +29,15 @@ typedef pair<int, int> Pair;
 
 // const int kMaxN;
 
-int N;
+int A, B, C;
 int ans = 0;
 
 signed main() {
-  cin >> N;
+  cin >> A >> B >> C;
+  int a[3] = {A, B, C};
+  sort(a, a+3);
 
-
+  ans = a[2]*10 + a[1] + a[0];
 
   cout << ans << endl;
   return 0;

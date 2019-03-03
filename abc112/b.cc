@@ -27,16 +27,23 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> Pair;
 
-// const int kMaxN;
+const int kMaxN = 100;
 
-int N;
-int ans = 0;
+int N, T;
+int c[kMaxN], t[kMaxN];
+// int ans = 0;
 
 signed main() {
-  cin >> N;
+  cin >> N >> T;
+  REP(i, N) { cin >> c[i] >> t[i]; }
 
+  int mincost = 10000;
+  REP(i, N) { if (t[i] <= T) { mincost = MIN(mincost, c[i]); } }
 
-
-  cout << ans << endl;
+  if (mincost == 10000) {
+    cout << "TLE" << endl;
+  } else {
+    cout << mincost << endl;
+  }
   return 0;
 }

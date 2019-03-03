@@ -27,15 +27,32 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> Pair;
 
-// const int kMaxN;
+const int kMaxN = 100;
+const int kMaxM = 100;
 
-int N;
+int N, M, A, B;
+int L[kMaxM], R[kMaxM];
 int ans = 0;
 
+bool is_a[kMaxN+1];
+
 signed main() {
-  cin >> N;
+  cin >> N >> M >> A >> B;
+  REP(i, M) { cin >> L[i] >> R[i]; }
 
+  REP(i, M) {
+    FOR(j, L[i], R[i]) { is_a[j] = true; }
+  }
 
+  FOR(i, 1, N) {
+    if (is_a[i]) {
+      ans += A;
+    } else if (A > B) {
+      ans += A;
+    } else {
+      ans += B;
+    }
+  }
 
   cout << ans << endl;
   return 0;

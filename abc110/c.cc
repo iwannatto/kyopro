@@ -27,16 +27,44 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> Pair;
 
-// const int kMaxN;
+const int kMaxN = 2*100000;
 
-int N;
-int ans = 0;
+string S, T;
+string ans;
+
+// bool table[26];
 
 signed main() {
-  cin >> N;
+  cin >> S;
+  cin >> T;
 
+  ans = "Yes";
+  FOR(i, 'a', 'z') {
+    int c = 0;
+    REP(j, S.length()) {
+      if (S[j] == i) {
+        c = T[j];
+        // if (table[c-'a']) {
+        //   ans = "No";
+        //   goto r;
+        // } else {
+        //   table[c-'a'] = true;
+        // }
+        break;
+      }
+    }
 
+    if (c == 0) { continue; }
 
+    REP(j, S.length()) {
+      if ((S[j] == i && T[j] != c) || (S[j] != i && T[j] == c)) {
+        ans = "No";
+        goto r;
+      }
+    }
+  }
+
+r:
   cout << ans << endl;
   return 0;
 }

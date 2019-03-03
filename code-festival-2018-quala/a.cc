@@ -29,13 +29,18 @@ typedef pair<int, int> Pair;
 
 // const int kMaxN;
 
-int N;
-int ans = 0;
+int A, B, C, S;
+string ans;
 
 signed main() {
-  cin >> N;
+  cin >> A >> B >> C;
+  cin >> S;
 
-
+  if (A+B+C <= S && S <= A+B+C+3) {
+    ans = "Yes";
+  } else {
+    ans = "No";
+  }
 
   cout << ans << endl;
   return 0;
