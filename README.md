@@ -20,7 +20,7 @@ ACした問題には問題リンクとタイトルと解説を入れる
 https://twitter.com/chokudai/status/986561875344158720  
 に従う、今は水色なので  
 https://kenkoooo.com/atcoder/?user=iwannatto&rivals=&kind=list  
-で400~500検索して出てくる問題を上から順にやる  
+でonly ratedで400~500検索して出てくる問題を上から順にやる  
 
 ## TODO
 
