@@ -1,0 +1,12 @@
+ABC118
+https://img.atcoder.jp/abc118/editorial.pdf
+
+D - Match Matching
+https://atcoder.jp/contests/abc118/tasks/abc118_d
+
+桁だけに注目すればよい。
+dp[i] := i本のマッチで作れる最大桁数
+とすると、普通に桁数は出る。
+そしてこのdpをとっておくと、
+dp[N]==dp[N-A[i]] ⇔　A[i]を使える
+という判定ができるので、でかいA[i]から各個調べていって上から並べていけば最終的な数も出る。

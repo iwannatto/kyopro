@@ -27,16 +27,38 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> Pair;
 
-// const int kMaxN;
+const int costs[10] = {0, 2, 5, 5, 4, 5, 6, 3, 7, 6};
+int N, M;
+int A[9];
+string ans;
 
-int N;
-int ans = 0;
+// 数、桁数
+int dp[10001];
 
 signed main() {
-  cin >> N;
+  cin >> N >> M;
+  REP(i, M) { cin >> A[i]; }
 
+  sort(A, A+M, greater<int>());
+  FOR(i, 1, N) {
+    REP(j, M) {
+      int k = i - costs[A[j]];
+      if (k >= 0) { dp[i] = MAX(dp[i], dp[k]+1); }
+    }
+    if (dp[i] == 0) { dp[i] = -INF; }
+  }
 
+  int i = N;
+  REP(j, M) {
+    int k = i-costs[A[j]];
+    while (k >= 0 && dp[i] == dp[k]+1) {
+      ans.push_back('0'+A[j]);
+      i -= costs[A[j]];
+      k = i-costs[A[j]];
+    }
+  }
 
   cout << ans << endl;
+
   return 0;
 }
