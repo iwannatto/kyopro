@@ -1,0 +1,12 @@
+みんなのプロコン 2019 予選
+https://img.atcoder.jp/yahoo-procon2019-qual/editorial.pdf
+
+C - When I hit my pocket...
+https://atcoder.jp/contests/yahoo-procon2019-qual/tasks/yahoo_procon2019_qual_c
+
+B - A <= 2かどうかで場合分け。
+trueなら、ビスケットをお金に換える意味がないので、K回叩くだけ。
+falseなら、ビスケット→1円→ビスケットを最大限繰り返すのが最適戦略になるため、
+まずA-1回叩いて交換可能にし、残った(K − (A − 1))/2サイクルを行う。
+(2で割って1余ってたら1叩きするのも考慮する。)
+ところで提出コードは(K − (A − 1)) < 0のときのことを考えていないが、これは本当はダメなはず（テストケースが弱いのか）
