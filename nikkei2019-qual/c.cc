@@ -28,39 +28,28 @@ using namespace std;
 typedef pair<int, int> Pair;
 
 // ---
-const int AnLim = POW_10_5;
-int N, M, A[AnLim], B[AnLim];
+const int Nlim = POW_10_5;
+int N;
+Pair AB[Nlim];
 
 int Ans() {
-  vector<int> C[N];
-  vector<int> P[N];
-  REP(i, N-1+M) {
-    C[A[i]].push_back(B[i]);
-    P[B[i]].push_back(A[i]);
-  }
-
-  int root;
+  sort(AB, AB+N, [](auto &left, auto &right) {
+    return left.first + left.second > right.first + right.second;
+  });
+  int ans = 0;
   REP(i, N) {
-    if (P[i].size() == 0) {
-      root = i;
-      break;
+    if (i%2 == 0) {
+      ans += AB[i].first;
+    } else {
+      ans -= AB[i].second;
     }
   }
-
-  int T[N] = {};
-  T[root] = 0;
-  queue<int> q;
-  q.push(root);
-  for (int i = root; !q.empty(); i = q.front()) {
-    q.pop();
-    
-  }
+  return ans;
 }
 
 signed main() {
-  cin >> N >> M;
-  REP(i, N-1+M) { cin >> A[i] >> B[i]; }
-  REP(i, N-1+M) { A[i]--; B[i]--; }
+  cin >> N;
+  REP(i, N) { cin >> AB[i].first >> AB[i].second; }
 
   auto ans = Ans();
 
