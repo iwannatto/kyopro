@@ -1,0 +1,10 @@
+ABC120
+https://img.atcoder.jp/abc120/editorial.pdf
+
+D - Decayed Bridges
+https://atcoder.jp/contests/abc120/tasks/abc120_d
+
+グラフから辺を削除していくのは一般に難しいので、逆から見る。
+すると、最初は不便さ {}_N C_2 で、
+大きさn1とn2のグループ同士を繋げるとn1*n2不便さが減る、となる。
+この不便さは、UFTにsizeを載せれば順次計算していける。
