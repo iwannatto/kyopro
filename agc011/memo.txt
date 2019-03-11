@@ -1,0 +1,15 @@
+AGC011
+https://img.atcoder.jp/agc011/editorial.pdf
+
+A - Airport Bus
+https://atcoder.jp/contests/agc011/tasks/agc011_a
+
+早く着いた人から順に乗せていくのが最適なので、人を到着順にsortして先頭から見ていけば良い。
+
+B - Colorful Creatures
+https://atcoder.jp/contests/agc011/tasks/agc011_b
+
+大きさ順に昇順sort。
+Σ_{0~k} A[i] * 2 < A[k+1]のとき、色k以下が残るのは無理。
+また、このようなkで最大のものをKとすると、色K+1以上は小さいやつから吸っていけば残れる。
+よってKを求めてN-(K+1)を出せば良い。
