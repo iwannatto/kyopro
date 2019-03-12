@@ -1,0 +1,13 @@
+ABC111
+https://img.atcoder.jp/arc103/editorial.pdf
+
+C - /\/\/\/
+https://atcoder.jp/contests/abc111/tasks/arc103_a
+
+単に場合分けゲー。
+数列をb=a0,a2,...とc=a1,a3,...に分割。
+最頻文字'a'、最頻文字数Aと表記する。
+まず、'b'!='c'なら素直にこれに書き換えてしまえばよく、N-B-C。
+そうでないなら、最頻文字をそれぞれ上から2つ取る必要があり、
+MIN(N-B2-C1, N-B1-C2)
+が答えとなる。

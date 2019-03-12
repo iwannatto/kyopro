@@ -20,22 +20,24 @@ using namespace std;
 #define FOR(i, a, b) for (int i = (a); i <= (b); ++i)
 #define RFOR(i, a, b) for (int i = (a); i >= (b); --i)
 #define REP(i, n) for (int i = 0; i < (n); ++i)
-#define NINTH_POWER_OF_TEN 1000000000
-#define LL_INF (numeric_limits<long long>::max()/2)
+#define POW_10_5 100000
+#define POW_10_9 1000000000
+#define INF (numeric_limits<int>::max()/2)
 #define int long long
 
-typedef long long ll;
 typedef pair<int, int> Pair;
 
-// const int kMaxN;
+// ---
 
-int N;
-int ans = 0;
+
+int Ans() {
+
+}
 
 signed main() {
-  cin >> N;
+  cin >>
 
-
+  auto ans = Ans();
 
   cout << ans << endl;
   return 0;
