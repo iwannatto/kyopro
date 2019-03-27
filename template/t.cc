@@ -26,6 +26,7 @@ using namespace std;
 #define int long long
 
 typedef pair<int, int> Pair;
+typedef unordered_map<int, int> Hash;
 
 // ---
 
