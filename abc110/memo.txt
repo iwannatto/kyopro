@@ -1,3 +1,40 @@
+ABC110
+https://img.atcoder.jp/abc110/editorial.pdf
+
+A - Maximize the Formula
+https://atcoder.jp/contests/abc110/tasks/abc110_a
+
+自明
+
+B - 1 Dimensional World's Tale
+https://atcoder.jp/contests/abc110/tasks/abc110_b
+
+xとyがいっぱいあっても、xMaxとyMinだけ見ればよい。
+そして、X<Z<=YかつxMax<Z<=yMinを満たすZが1つでも存在する⇔No Warであるので、これを判定すればよい。
+図で何となく考えると、MAX(X, xMax)<Z<=MIN(Y, yMin)なZがあればよさそうだなという感じもする。
+
+間違いテストケースのせいでWAになっていたが、最初に提出したコードでは、
+X<Y, X<yMin, xMax<Y, xMax<yMin　を全部満たすのならNo War
+という思想で、X<Yが保証されているはずだった（ここで間違っているテストケースがあったっぽい）ので残り3つでNo War判定をしている。
+
+もう一つのコード（このリポジトリにある方）ではX<Z<=Yを満たすZでxMax<Z<=yMinなものがあるかを全探索していて、範囲が200程度であるので余裕で間に合うというコードになっている。
+
+C - String Transformation
+https://atcoder.jp/contests/abc110/tasks/abc110_c
+
+しばらく考察すると、実は操作全体が置換になるということがわかる。
+（試せば何となく分かるのだが、交換動作のみで合流させることはできない。つまり、abはどうあがいてもccとかにはならない。ab→db→bdみたいになっちゃう。）
+というわけで置換してSがTになるかを見ればよい。
+提出コードではわかりにくいが、
+各アルファベットiに対して、
+  Sの中で最初に出てきたものにより対応i→cを固定
+  STを頭から見て、全部の場所に対して
+    ちゃんとi→cに移っているか
+    not i→cがないか
+を調べることによりアルファベット置換の結果として合法かを調べている。
+
+メモ
+
 c 300
 え、これむずいな
 そうでもなかった、別アルファベットから同アルファベットになることができないというだけでいける
