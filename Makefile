@@ -1,7 +1,7 @@
 T = template/t.cc
 M = template/memo.txt
 
-agc032 :
+exawizards2019 :
 	mkdir $@
 	cp ${T} $@/a.cc
 	cp ${T} $@/b.cc

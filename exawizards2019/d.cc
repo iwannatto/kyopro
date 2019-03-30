@@ -30,16 +30,36 @@ typedef pair<int, int> Pair;
 typedef unordered_map<int, int> Hash;
 
 // ---
+const int Nlim = 200, Xlim = POW_10_5;
+int N, X;
+int S[Nlim];
+int dp[Xlim+1][Nlim+1];
 
+int Ans(int x, int i) {
+  if (dp[x][i] != -1) { return dp[x][i]; }
+  if (i == N-1) { dp[x][i] = x % S[N-1]; return x % S[N-1]; }
 
-int Ans() {
+  int ans = 0;
+  ans += Ans(x % S[i], i+1);
+  ans %= MOD;
 
+  ans += Ans(x, i+1) * (N - (i + 1));
+  ans %= MOD;
+
+  dp[x][i] = ans; return ans;
 }
 
 signed main() {
-  cin >>
+  cin >> N >> X;
+  REP(i, N) { cin >> S[i]; }
 
-  auto ans = Ans();
+  sort(S, S+N, greater<int>());
+  REP(i, Xlim+1) {
+    REP(j, Nlim+1) {
+      dp[i][j] = -1;
+    }
+  }
+  auto ans = Ans(X, 0);
 
   cout << ans << endl;
   return 0;
