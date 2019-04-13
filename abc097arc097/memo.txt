@@ -1,3 +1,39 @@
+ABC097 / ARC097
+https://atcoder.jp/contests/abc097/
+https://atcoder.jp/contests/arc097/
+
+A - Colorful Transceivers
+自明
+
+B - Exponential
+X以下のb^pで表せる最大の数を求める。
+Xが小さいのでどうとでもなるが、bを昇順に調べていくとスマート。
+for b
+  p = 2
+  while b^p <= X
+    ans = max(ans, b^p)
+    p += 1
+みたいな感じ。
+
+C - K-th Substring
+制約を見るとKが小さいので、これを使えないかと考える。
+例えば長さK以下のsubstringしかそもそも要らないとかだと都合がいい。
+ところが、abcdeのaから始まるsubstringを辞書順に並べると
+a
+ab
+abc
+abcd
+abcde
+となることからわかるように、
+aからn個取ったsubstringと比べるとaからn+1個以上取ったsubstringは辞書順で絶対に後ろにある。
+ということは、さっき考えた「長さK以下のsubstringしかいらないのでは」というのは本当だったことになる。
+あとは長さK以下のsubstringを全部取ってsortしても|s|Klog(|s|K)*Kなので間に合う。
+（上の式の最後の*Kは、1回の文字列比較にかかる時間を表している。）
+
+
+
+所感
+
 c
 p:文字列の長さがK以下ということは、答えになりうるsubstrの長さもK以下。
 （短いほうが辞書順先なので。a<ab<abc<abcd的な。）
