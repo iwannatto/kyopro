@@ -1,7 +1,7 @@
 T = template/t.cc
 M = template/memo.txt
 
-kicstart2019b :
+gcj2019-1a :
 	mkdir $@
 	cp ${T} $@/a.cc
 	cp ${T} $@/b.cc

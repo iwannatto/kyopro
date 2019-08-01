@@ -1,4 +1,5 @@
 int Gcd(int a, int b) {
+  if (b > a) { return Gcd(b, a); }
   if (b == 0) { return a; }
   return Gcd(b, a%b);
 }
