@@ -1,3 +1,21 @@
+# new
+atcoder problemsが便利すぎるのでソースコードをgithubに置くのはもういいかなという気持ちになりました  
+
+atcoder problems  
+https://kenkoooo.com/atcoder/#/user/iwannatto  
+基本はここ見れば良さそう  
+僕が解いた問題を知りたい人はこれの下の方のSubmissionsから見れます  
+解く問題もこれのRecommendationsから見ればいいかなあという感じ  
+
+メモとテンプレートを置く感じのディレクトリにする  
+（atcoderじゃないコンテストのやつは……どうしようね）  
+とりあえずソースコードは全部削除しつつメモはrenameしていく作業をするかな  
+メモ名はagc039.txt　みたいな体裁にすればいいのかな  
+
+---
+
+以下old  
+
 # atcoder
 コンテストごとにディレクトリ  
 ディレクトリ名はコンテストページ開いた時のurlと同じ名前、agc028みたいな  
