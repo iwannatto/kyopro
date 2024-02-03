@@ -1,7 +1,8 @@
 T = template/t.cc
-M = template/memo.txt
+MEMO = template/memo.txt
+MAKEFILE = template/Makefile
 
-abc145 :
+practice2 :
 	mkdir $@
 	cp ${T} $@/a.cc
 	cp ${T} $@/b.cc
@@ -9,4 +10,5 @@ abc145 :
 	cp ${T} $@/d.cc
 	cp ${T} $@/e.cc
 	cp ${T} $@/f.cc
-	cp ${M} $@/
+	cp ${MEMO} $@/
+	cp ${MAKEFILE} $@/

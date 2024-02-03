@@ -1,7 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++14
+CXXFLAGS = -std=c++17
 
-# テストとかを自動化する用のmakefileをいつか作る
-
-c : c.cc
-	$(CXX) $(CSSFLAGS) c.cc -o $@
+a : a.cc
+	$(CXX) $(CXXFLAGS) $< -I ../library -o $@
