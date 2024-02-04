@@ -2,7 +2,7 @@ T = template/t.cc
 MEMO = template/memo.txt
 MAKEFILE = template/Makefile
 
-practice2 :
+abc075 :
 	mkdir $@
 	cp ${T} $@/a.cc
 	cp ${T} $@/b.cc

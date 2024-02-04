@@ -17,7 +17,6 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#define MIN(a, b) ((a) > (b) ? (b) : (a))
 #define FOR(i, a, b) for (int i = (a); i < (b); ++i)
 #define RFOR(i, a, b) for (int i = (a); i > (b); --i)
 #define REP(i, n) for (int i = 0; i < (n); ++i)
@@ -25,6 +24,7 @@ using namespace atcoder;
 #define POW_10_9 1000000000
 #define MOD 1000000007
 #define INF numeric_limits<int>::max()
+#define LLINF numeric_limits<long long int>::max()
 
 using ll = long long int;
 
