@@ -6,12 +6,16 @@
 #include <iterator>
 #include <limits>
 #include <map>
+#include <numeric>
 #include <queue>
+#include <ranges>
 #include <set>
 #include <string>
+#include <tuple>
 #include <utility>
 #include <unordered_map>
 #include <unordered_set>
+#include <vector>
 using namespace std;
 
 #include <atcoder/all>
@@ -34,5 +38,5 @@ typedef unordered_map<int, int> Hash;
 // ---
 
 int main() {
-  return 0;
+	return 0;
 }
