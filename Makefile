@@ -12,3 +12,8 @@ abc075 :
 	cp ${T} $@/f.cc
 	cp ${MEMO} $@/
 	cp ${MAKEFILE} $@/
+
+kakomon :
+	mkdir $@
+	cp ${T} $@/a.cc
+	cp ${MAKEFILE} $@/
