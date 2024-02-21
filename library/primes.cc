@@ -7,7 +7,7 @@ using namespace std;
 
 // Primes begin
 class Primes {
- public:
+public:
   int n;
   vector<int> nthp;
   vector<bool> isp;
