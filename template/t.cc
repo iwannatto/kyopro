@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <bitset>
+#include <cassert>
 #include <cfloat>
 #include <cmath>
 #include <complex>
